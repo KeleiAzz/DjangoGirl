@@ -5,21 +5,28 @@
     <title>Kelei's blog</title>
 </head>
 <body>
-    <div>
-        <h1><a href="">Django Girls Blog</a></h1>
-    </div>
-    <div>
-        <p>published: 23.03.2015, 22:20</p>
-        <h2><a href="">My first post</a></h2>
-        <p>The last of us</p>
-    </div>
-
-    <div>
-        <p>published: 24.03.2015, 21:22</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Kill zone: Shadow fall</p>
-    </div>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{#    <div>#}
+{#        <h1><a href="">Django Girls Blog</a></h1>#}
+{#    </div>#}
+{#    <div>#}
+{#        <p>published: 23.03.2015, 22:20</p>#}
+{#        <h2><a href="">My first post</a></h2>#}
+{#        <p>The last of us</p>#}
+{#    </div>#}
+{##}
+{#    <div>#}
+{#        <p>published: 24.03.2015, 21:22</p>#}
+{#        <h2><a href="">My second post</a></h2>#}
+{#        <p>Kill zone: Shadow fall</p>#}
+{#    </div>#}
+{#    <p>Hi there!</p>#}
+{#    <p>It works!</p>#}
 </body>
 </html>
